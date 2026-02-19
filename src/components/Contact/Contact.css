@@ -1,0 +1,197 @@
+.projects-section {
+  padding: 100px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.orb-p1 {
+  width: 500px; height: 500px;
+  top: 5%; left: -120px;
+  background: var(--hero-glow-1);
+  position: absolute; border-radius: 50%;
+  filter: blur(100px); pointer-events: none;
+}
+.orb-p2 {
+  width: 400px; height: 400px;
+  bottom: 10%; right: -100px;
+  background: var(--hero-glow-2);
+  position: absolute; border-radius: 50%;
+  filter: blur(100px); pointer-events: none;
+}
+.projects-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.projects-header {
+  margin-bottom: 72px;
+  max-width: 600px;
+}
+.projects-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.projects-sub {
+  font-size: 16px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+
+/* ZIG ZAG */
+.projects-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.row-reverse { direction: rtl; }
+.row-reverse > * { direction: ltr; }
+
+/* VISUAL */
+.project-visual {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1.5px solid var(--border);
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+  cursor: none;
+  min-height: 300px;
+  background: var(--bg-2);
+}
+.project-mockup {
+  padding: 16px;
+  position: relative;
+  z-index: 2;
+}
+.mock-topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border-radius: 10px 10px 0 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.mock-dots { display: flex; gap: 5px; }
+.mock-dots span {
+  width: 9px; height: 9px;
+  border-radius: 50%;
+}
+.mock-url {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--text-3);
+  margin-left: 8px;
+}
+.mock-body {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.mock-emoji { font-size: 64px; animation: floatY 5s ease-in-out infinite; }
+.mock-lines { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.mock-line { height: 8px; border-radius: 50px; }
+.mock-line.wide  { width: 85%; }
+.mock-line.med   { width: 65%; }
+.mock-line.short { width: 45%; }
+
+.project-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  padding: 5px 13px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  z-index: 3;
+}
+.project-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.project-year {
+  position: absolute;
+  bottom: 14px; left: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--text-3);
+  z-index: 3;
+}
+
+/* TEXT */
+.project-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.project-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+}
+.project-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.project-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(22px, 2.8vw, 36px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+.project-desc {
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.75;
+}
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ptag {
+  padding: 5px 13px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--c, var(--accent)) 12%, transparent);
+  color: var(--c, var(--accent));
+  border: 1px solid color-mix(in srgb, var(--c, var(--accent)) 35%, transparent);
+}
+.view-btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  margin-top: 6px;
+}
+.arrow-icon { font-size: 16px; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .project-row, .row-reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 32px;
+  }
+  .projects-zigzag { gap: 60px; }
+  .projects-section { padding: 80px 20px; }
+}
